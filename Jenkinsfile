@@ -7,7 +7,7 @@ pipeline {
         stage("Checkout"){
             steps {
                 echo "Hello this is Akshata!!!"
-                checkout([$class: "GitSCM", branches: [[name: "*/dev"]], extensions: [], userRemoteConfigs: [[url: "https://github.com/athorat940/maven-hello-world"]]])
+                checkout([$class: "GitSCM", branches: [[name: "*/Dev"]], extensions: [], userRemoteConfigs: [[url: "https://github.com/athorat940/maven-hello-world"]]])
              }   
         }
 		stage("Build"){
