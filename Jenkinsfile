@@ -32,7 +32,7 @@ pipeline {
 	    	stage('Quality gate check'){
 			steps{
 			timeout(time: 1, unit: 'HOURS'){
-				def QG = waitForQualityGate()
+				QG = waitForQualityGate()
 				if (QG.status != "OK"){
 					slackSend baseUrl: 'https://hooks.slack.com/services/',
 					channel: '#Jenkins_Multibranch_pipeline' ,
