@@ -14,7 +14,14 @@ pipeline {
 			steps {
 				sh "mvn -Dmaven.test.failure.ignore=true clean package"
 			}
-		}	
+		}
+		stage('SonarQube Analysis'){
+			steps{
+			   def mvnHome = tool name: 'maven-3', type: 'MAVEN'
+			   withSonarQubeEnv('sonar-6')
+				 sh "${mvnHome}/bin/mvn sonar:sonar"
+			}
+		}
      } 
      post {
          always {
