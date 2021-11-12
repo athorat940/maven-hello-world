@@ -19,7 +19,7 @@ pipeline {
 			steps{
 			  // def mvnHome = tool name: 'maven-3', type: 'maven'
 			   withSonarQubeEnv('sonar-6')
-				 sh "mvn sonar:sonar"
+			     sh "mvn sonar:sonar"
 			}
 		}
      } 
