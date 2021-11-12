@@ -1,8 +1,11 @@
 pipeline {
     agent any
-    tools {
+   /* tools {
         maven "MAVEN"
-    }
+    }*/
+     environment {
+	dockerImage=''    
+	}	
     stages {
         stage("Checkout"){
             steps {
@@ -29,6 +32,14 @@ pipeline {
 			   Akshata''', cc: '', replyTo: '', subject: 'Jenkins Job' , to: 'takshata423@gmail.com'
 	                  }
                 }
+	        stage('Build Docker Image'){
+			steps {
+			    scripts {
+				dockerImage = docker.build registry
+				}	
+				
+			}
+	    }
 	    	
      } 
      
