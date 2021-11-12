@@ -5,7 +5,8 @@ pipeline {
     }
      environment {
 	dockerImage=''
-	registry= 'akshata1209/akshata'
+	registry = 'akshata1209/akshata'
+	registryCredential = 'dockerhub_id'
 	}	
     stages {
         stage("Checkout"){
@@ -35,10 +36,10 @@ pipeline {
                 }*/
 	        stage('Build Docker Image'){
 			steps {
-			    
+			    script {
 				dockerImage = docker.build registry
 					
-				
+			    }
 			}
 	    }
 	    	
