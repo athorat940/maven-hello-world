@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    tools {
+   /* tools {
         maven "MAVEN"
-    }
+    } */
     stages {
         stage("Checkout"){
             steps {
@@ -23,14 +23,14 @@ pipeline {
 			}
 		}
      
-	        stage {
+	    stage {
 		    steps {
 		        junit(
 			    allowEmptyResults:true,
 			    testResults: '*test-reports/.xml'
 		        )
 
-		    }
+			   }
 	        }
         }
 }
