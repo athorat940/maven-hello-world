@@ -26,13 +26,13 @@ pipeline {
 			     }
 			}
 		}
-	        stage('Email Notification'){
+	        /*stage('Email Notification'){
 			steps{
 			   mail bcc: '', body: '''Hi Welcome to Jenkins email alerts
 			   Thanks
 			   Akshata''', cc: '', replyTo: '', subject: 'Jenkins Job' , to: 'takshata423@gmail.com'
 	                  }
-                }
+                }*/
 	        stage('Build Docker Image'){
 			steps {
 			    
