@@ -1,10 +1,11 @@
 pipeline {
     agent any
-   /* tools {
+    tools {
         maven "MAVEN"
-    }*/
+    }
      environment {
-	dockerImage=''    
+	dockerImage=''
+	registry= 'akshata1209/akshata'
 	}	
     stages {
         stage("Checkout"){
