@@ -19,17 +19,18 @@ pipeline {
 			steps{
 			  // def mvnHome = tool name: 'maven-3', type: 'maven'
 			   withSonarQubeEnv('sonar-6')
-			     sh "mvn sonar:sonar"
+			     sh "/opt/maven/bin/mvn sonar:sonar"
 			}
 		}
-     } 
-     post {
-         always {
-             junit(
-                 allowEmptyResults:true,
-                 testResults: '*test-reports/.xml'
-             )
-         
-         }
-     }
+     
+	        stage {
+		    steps {
+		        junit(
+			    allowEmptyResults:true,
+			    testResults: '*test-reports/.xml'
+		        )
+
+		    }
+	        }
+        }
 }
