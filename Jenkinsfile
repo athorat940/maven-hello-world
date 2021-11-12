@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    tools {
+  /*  tools {
         maven "MAVEN"
-    }
+    } */
     stages {
         stage("Checkout"){
             steps {
@@ -17,7 +17,7 @@ pipeline {
 		}
 		stage('SonarQube Analysis'){
 			steps{
-			   def mvnHome = tool name: 'maven-3', type: 'MAVEN'
+			   def mvnHome = tool name: 'MAVEN', type: 'MAVEN'
 			   withSonarQubeEnv('sonar-6')
 				 sh "${mvnHome}/bin/mvn sonar:sonar"
 			}
