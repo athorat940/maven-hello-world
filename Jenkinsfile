@@ -3,11 +3,11 @@ pipeline {
     tools {
         maven "MAVEN"
     }
-     environment {
+    /* environment {
 	dockerImage=''
 	registry = 'akshata1209/akshata'
 	registryCredential = 'dockerhub_id'
-	}	
+	}	*/
     stages {
         stage("Checkout"){
             steps {
@@ -37,7 +37,7 @@ pipeline {
 	        stage('Build Docker Image'){
 			steps {
 			    script {
-				dockerImage = docker.build registry
+				sh 'docker build -t akshata1209/my-app-1.0 .'
 					
 			    }
 			}
