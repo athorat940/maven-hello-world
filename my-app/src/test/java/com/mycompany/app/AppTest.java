@@ -35,7 +35,7 @@ public class AppTest
      */
     public void testApp()
     {
-       WebDriverManager.chromedriver().browserVersion("94.0.4606.81").setup();  
+       WebDriverManager.chromedriver().browserVersion("95.0.4638.69").setup();  
        WebDriver driver = new ChromeDriver();
     	
         String baseUrl = "http://demo.guru99.com/test/newtours/";
