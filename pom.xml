@@ -15,10 +15,23 @@
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <dependency>
+       <groupId>org.seleniumhq.selenium</groupId>
+       <artifactId>selenium-java</artifactId>
+       <version>4.0.0</version>
+    </dependency>
+    <dependency>
+       <groupId>org.testng</groupId>
+       <artifactId>testng</artifactId>
+       <version>6.8</version>
+       <scope>test</scope>
+    </dependency>
+    <dependency>
+       <groupId>io.github.bonigarcia</groupId>
+       <artifactId>webdrivermanager</artifactId>
+       <version>5.0.3</version>
+    </dependency>
+
     </dependency>
     <dependency>
         <groupId>org.checkerframework</groupId>
@@ -56,6 +69,16 @@
 	  </arguments>
 	</configuration>
       </plugin>
+       <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+          
+          <configuration>
+             <suiteXmlFiles>
+               <suiteXmlFile>Test.xml</suiteXmlFile>
+             </suiteXmlFiles>
+          </configuration> 
+        </plugin>
       <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-shade-plugin</artifactId>
