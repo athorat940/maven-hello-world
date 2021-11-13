@@ -37,8 +37,9 @@ pipeline {
             }
 	}
 	    stage('Testing'){
-		    step([$class : 'Publisher', reportFilenamePattern : '**/testng-results.xml'])
-		    
+		    steps {
+		    	step([$class : 'Publisher', reportFilenamePattern : '**/testng-results.xml'])
+		    }
 	    }
     } 
 }
