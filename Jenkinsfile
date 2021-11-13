@@ -42,8 +42,9 @@ pipeline {
         always {
             junit(
                 allowEmptyResults:true,
-                testResults: '*test-reports/.xml'
-            )
+                testResults: '/var/lib/jenkins/workspace/test-reports/*.xml'
+		     
+            	)
          
         }
     }
