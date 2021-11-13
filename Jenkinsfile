@@ -1,4 +1,9 @@
 pipeline {
+    environment { 
+        registry = "athorat940/maven-hello-world/myapp" 
+        registryCredential = 'dockerhub' 
+        dockerImage = '' 
+    }	
     agent any
     tools {
         maven "MAVEN"
