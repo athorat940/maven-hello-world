@@ -1,13 +1,8 @@
 pipeline {
     agent any
-    tools {
+   /* tools {
         maven "MAVEN"
-    }
-    /* environment {
-	dockerImage=''
-	registry = 'akshata1209/akshata'
-	registryCredential = 'dockerhub_id'
-	}	*/
+    }*/
     stages {
         stage("Checkout"){
             steps {
