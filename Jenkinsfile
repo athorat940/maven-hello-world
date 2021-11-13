@@ -33,7 +33,7 @@ pipeline {
 			steps {
 			    script {
 				sh 'docker build -t akshata1209/my-app-1.0 .'
-				sh 'docker run -it my-app-1.0'
+				sh 'docker run -it akshata1209/my-app-1.0'
 					
 			    }
 			}
