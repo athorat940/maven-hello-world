@@ -27,14 +27,7 @@ pipeline {
 			}
 		}
 	}
-	stage("testing") {
-        	when {
-                	branch 'QA'
-        	}
-                steps {
-                	sh 'echo hello' 
-                }
-        }
+
 	stage('Email Notification'){
 		steps{
 			mail bcc: '', body: '''Hi Welcome to Jenkins email alerts
@@ -42,6 +35,14 @@ pipeline {
 			Akshata''', cc: '', replyTo: '', subject: 'Jenkins Job' , to: 'takshata423@gmail.com'
 	            }
         }
+	stage('Slack Notification'){
+		steps{
+			slackSend channel: 'akshata-channel', 
+			color: 'good', message: 'Welcome to Jenkins, Slack!', 
+			teamDomain: 'citiustechnetwork', 
+			tokenCredentialId: '2c2c952a-7b10-4f42-953d-e786f78332f9'
+		}
+	    }    
 	stage('Build Docker Image'){
 		steps {
 			script {
