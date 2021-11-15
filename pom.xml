@@ -65,14 +65,7 @@
 	    <argument>argument1</argument>
 	  </arguments>
 	</configuration>
-      </plugin>
-      <plugin>
-          <configuration>
-             <suiteXmlFiles>
-               <suiteXmlFile>Test.xml</suiteXmlFile>
-             </suiteXmlFiles>
-          </configuration> 
-        </plugin>	    
+      </plugin>    
       <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-shade-plugin</artifactId>
