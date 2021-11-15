@@ -46,6 +46,7 @@ pipeline {
 	stage('Build Docker Image'){
 		steps {
 			script {
+				
 				//sh 'docker build -t akshata1209/my-app-1.0 .'
 				dockerImage = docker.build registry + ":$BUILD_NUMBER"
 			}
@@ -54,7 +55,10 @@ pipeline {
 	    stage('Push Docker Image'){
 		steps {
 			script {
-				
+				withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpwd')]) 
+			{
+				sh 'docker login -u akshata1209 -p ${dockerhubpwd}'
+				}
 				sh 'docker push akshata1209/akshata:$BUILD_NUMBER'
                 }
             }
