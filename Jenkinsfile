@@ -51,14 +51,11 @@ pipeline {
 			}
 		}
 	}
-	stage('Push Docker Image'){
+	    stage('Push Docker Image'){
 		steps {
 			script {
 				
 				sh 'docker push akshata1209/akshata'
-			}
-		}
-	}	
                 }
             }
 	}
