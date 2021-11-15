@@ -55,7 +55,7 @@ pipeline {
 		steps {
 			script {
 				
-				sh 'docker push akshata1209/akshata'
+				sh 'docker push akshata1209/akshata:v1'
                 }
             }
 	}
