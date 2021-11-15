@@ -48,6 +48,9 @@ pipeline {
 			script {
 				//sh 'docker build -t akshata1209/my-app-1.0 .'
 				dockerImage = docker.build registry + ":$BUILD_NUMBER"
+			}
+		}
+	}
 	stage('Push Docker Image'){
 		steps {
 			script {
