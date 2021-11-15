@@ -39,7 +39,7 @@ pipeline {
 			Akshata''', cc: '', replyTo: '', subject: 'Jenkins Job' , to: 'takshata423@gmail.com'
 	            }
         }
-	stage('Slack Notification'){
+	stage('Slack Notification For Dev'){
 		steps{
 			slackSend channel: 'akshata-channel', 
 			color: 'good', message: 'Welcome to Jenkins, Slack!', 
@@ -47,29 +47,7 @@ pipeline {
 			tokenCredentialId: '2c2c952a-7b10-4f42-953d-e786f78332f9'
 		}
 	    }
-	stage( 'Appoval mail for QA' ){
-            steps{
-                slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'akshata-channel', message: "${env.BUILD_URL}", teamDomain: '', tokenCredentialId: 'slackqa'
-        }
-}
-            
-        stage("QA Approval") {
-                  steps {
-			script {
-			def userInput = input(id: 'Proceed1', message: 'Promote build?', parameters: [[$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Please confirm you agree with this']])
-			echo 'userInput: ' + userInput
- 
-            if(userInput == true) {
-                // do action
-            } else {
-                // not do action
-                echo "Action was aborted."
-            }
- 
-        }  
-        
-      }
- }    
+   
 	stage('Build Docker Image'){
 		steps {
 			script {
