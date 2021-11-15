@@ -16,7 +16,7 @@ pipeline {
 	stage("Build"){
 		steps {
             		//sh "mvn -Dmaven.test.failure.ignore=true clean package"
-			sh"/opt/maven/bin/mvn clean package "
+			sh '/opt/maven/bin/mvn clean package'
 		}
 	 }
 	stage('SonarQube Analysis'){
@@ -29,7 +29,7 @@ pipeline {
 	}
         stage('Test'){
 		steps{
-			sh 'mvn test'			
+			sh '/opt/maven/bin/mvn test'			
 		}
 	}
 	stage('Email Notification'){
