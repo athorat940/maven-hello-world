@@ -79,17 +79,16 @@ pipeline {
 			}
 		}
 	}
-	    stage('Push Docker Image'){
-		steps {
-			script {
-				withCredentials([string(credentialsId: 'dockerhubuser', variable: 'dockerhubpwd')]) 
-			{
-				sh 'docker login -u akshata1209 -p ${dockerhubpwd}'
-				}
-				sh 'docker push akshata1209/akshata:$BUILD_NUMBER'
+	    stage('Push Docker Image') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'dockerhubuser', variable: 'dockerhubpwd')]) {
+                         sh 'docker login -u akash64574 -p ${dockerhubpwd}'
+    }
+                sh 'docker push akshata1209/akshata:$BUILD_NUMBER'
                 }
             }
-	}
+        } 
 	    
     } 
 }
