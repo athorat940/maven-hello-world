@@ -83,7 +83,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'dockerhubuser', variable: 'dockerhubpwd')]) {
-                         sh 'docker login -u akshata1209 -p ${dockerhubpwd}'
+                         sh 'docker login -u akshata1209 -p "b025fc74-c786-42aa-ae15-89696bd56aeb"'
     }
                 sh 'docker push akshata1209/akshata:$BUILD_NUMBER'
                 }
