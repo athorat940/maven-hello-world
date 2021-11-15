@@ -4,10 +4,7 @@ pipeline {
         registryCredential = 'dockerhub' 
         dockerImage = '' 
     }	
-    agent any
-    tools {
-        maven "MAVEN"
-    }
+    
     stages {
         stage("Checkout"){
             steps {
