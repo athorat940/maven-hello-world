@@ -1,6 +1,6 @@
 pipeline {
     environment { 
-        registry = "athorat940/maven-hello-world/myapp" 
+        registry = "akshata1209/akshata" 
         registryCredential = 'dockerhub' 
         dockerImage = '' 
     }	
