@@ -27,7 +27,11 @@ pipeline {
 			}
 		}
 	}
-
+        stage('Test'){
+		steps{
+			sh 'mvn test'			
+		}
+	}
 	stage('Email Notification'){
 		steps{
 			mail bcc: '', body: '''Hi Welcome to Jenkins email alerts
