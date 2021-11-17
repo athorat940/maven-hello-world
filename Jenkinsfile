@@ -15,22 +15,22 @@ pipeline {
             }
 	stage("Build"){
 		steps {
-            		sh "mvn -Dmaven.test.failure.ignore=true clean package"
-			//sh '/opt/maven/bin/mvn clean package'
+            		//sh "mvn -Dmaven.test.failure.ignore=true clean package"
+			sh '/opt/maven/bin/mvn clean package'
 		}
 	 }
 	stage('SonarQube Analysis'){
 		steps{
 			withSonarQubeEnv('SonarQube') {
-			sh "mvn clean package sonar:sonar"
-			//sh '/opt/maven/bin/mvn sonar:sonar'
+			//sh "mvn clean package sonar:sonar"
+			sh '/opt/maven/bin/mvn sonar:sonar'
 			}
 		}
 	}
         stage('Test'){
 		steps{
-			sh "mvn test"
-			//sh '/opt/maven/bin/mvn test'			
+			//sh "mvn test"
+			sh '/opt/maven/bin/mvn test'			
 		}
 	}
 	stage('Email Notification'){
