@@ -63,8 +63,7 @@ pipeline {
             } else {
                 // not do action
                 echo "Action was aborted."
-            }
- 
+            } 
         }  
         
       }
